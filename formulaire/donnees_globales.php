@@ -1,0 +1,386 @@
+<?php  
+    inclure_fichier("/formulaire/proprietes_speciales.php");
+
+    final class Donnees
+    {
+        public static function donnees_proprietes_formulaire(
+            string $valeur, string $nom, string $type, 
+            bool $secret, bool $requis, bool $modifiable,
+            bool $unique, string $erreur, string $placeholder) : array
+        {
+            return array(
+                "valeur" => $valeur, 
+                "nom" => $nom, 
+                "type" => $type,
+                "secret" => $secret,
+                "requis" => $requis,
+                "modifiable" => $modifiable,
+                "unique" => $unique,
+                "erreur" => $erreur,
+                "placeholder" => $placeholder,
+            );
+        }
+
+        public static function donnees_utilisateur() : array
+        {
+            return array(
+                "id" => Donnees::donnees_proprietes_formulaire(
+                    /* valeur => */ "", 
+                    /* nom => */ "ID", 
+                    /* type => */ "number",
+                    /* secret => */ true,
+                    /* requis => */ true,
+                    /* modifiable => */ false,
+                    /* unique => */ true,
+                    /* erreur => */ "",
+                    /* placeholder => */ "",
+                ),
+                "pseudo" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Pseudo", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ true,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Login",
+                ),
+                "sexe" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Sexe", 
+                    /* "type" => */ "select",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "naissance" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Date de Naissance", 
+                    /* "type" => */ "date",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "profession" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Profession", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "étudiant, professeur, ...",
+                ),
+                "ville" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Ville de Naissance", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Paris, Cergy, ...",
+                ),
+                "role" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "membre",
+                    /* "nom" => */ "Rôle dans l'association", 
+                    /* "type" => */ "select",
+                    /* "secret" => */ true,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ), // membre, admin, trésorier, chef
+                
+                // Données privées
+                "nom" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Nom", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Nom de famille",
+                ),
+                "prenom" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Prénom", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Prénom",
+                ),
+                "adresse" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Adresse", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "33 rue des moineaux",
+                ),
+                "motDePasse" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Mot de Passe", 
+                    /* "type" => */ "password",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Mot de Passe",
+                ),
+
+                // Ne doivent pas être afficher dans le formulaire
+                "produitsAchetes" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Liste des produits achetés", 
+                    /* "type" => */ "tableau",
+                    /* "secret" => */ true,
+                    /* "requis" => */ false,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "evenementsParticipes" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Liste des évènements auxquelles vous participés", 
+                    /* "type" => */ "tableau",
+                    /* "secret" => */ true,
+                    /* "requis" => */ false,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+            );
+        }
+
+        public static function donnees_evenement(array $tableauEvenement = 
+            array("", "", "", "", "", "", "", "", "0")
+        ) : array
+        {
+            if (sizeof($tableauEvenement) !== 9)
+            {
+                throw new Exception("La valeur passée en parmètre 
+                n'est pas adapté à cette fonction");
+            }
+
+            return array(
+                "id" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[0], 
+                    /* "nom" => */ "ID", 
+                    /* "type" => */ "number",
+                    /* "secret" => */ true,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "nom" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[1], 
+                    /* "nom" => */ "Nom événement", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ true,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Tournois, Ventes, ...",
+                ),
+                "lieu" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[2], 
+                    /* "nom" => */ "Lieu événement", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Paris, Cergy, ...",
+                ),
+                "dateDebut" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[3], 
+                    /* "nom" => */ "Date de début", 
+                    /* "type" => */ "datetime-local",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "dateFin" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[4], 
+                    /* "nom" => */ "Date de fin", 
+                    /* "type" => */ "datetime-local",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "description" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[5], 
+                    /* "nom" => */ "Description rapide", 
+                    /* "type" => */ "textarea",
+                    /* "secret" => */ false,
+                    /* "requis" => */ false,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Description de l'évenement ...",
+                ),
+                "prixParPersonne" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[6], 
+                    /* "nom" => */ "Prix par personne",
+                    /* "type" => */ "number",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Prix en euros ...",
+                ),
+                "cout" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[7], 
+                    /* "nom" => */ "Coût événement",
+                    /* "type" => */ "number",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Coût en euros ...",
+                ),
+                "nombreParticipants" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ $tableauEvenement[8], 
+                    /* "nom" => */ "Nombre de Participant(s)", 
+                    /* "type" => */ "number",
+                    /* "secret" => */ true,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Participants ...",
+                ),
+            );
+        }
+
+
+        public static function donnees_boutique(): array
+        {
+            return array(
+                "id" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "ID", 
+                    /* "type" => */ "number",
+                    /* "secret" => */ true,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "",
+                ),
+                "nom" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Nom du produit", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Jeux, Casque, Téléphone, ...",
+                ),
+                // Nom de chemin ou se trouve le fichier image
+                "image" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Image", 
+                    /* "type" => */ "file",
+                    /* "secret" => */ false,
+                    /* "requis" => */ false,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Images du produit ...",
+                ),
+                "marque" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Marque", 
+                    /* "type" => */ "text",
+                    /* "secret" => */ false,
+                    /* "requis" => */ false,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Canon, Sony, Microsoft ...",
+                ),
+                "prix" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Prix",
+                    /* "type" => */ "number",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Prix en euros ...",
+                ),
+                "coutFabrication" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Coût de fabrication d un produit",
+                    /* "type" => */ "number",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Coût en euros ...",
+                ),
+                "stock" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "", 
+                    /* "nom" => */ "Stock restant",
+                    /* "type" => */ "number",
+                    /* "secret" => */ false,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ true,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "10, 20, 50, ...",
+                ),
+                "nombreAchat" => Donnees::donnees_proprietes_formulaire(
+                    /* "valeur" => */ "0", 
+                    /* "nom" => */ "Nombre de personnes ayant acheté le produit",
+                    /* "type" => */ "number",
+                    /* "secret" => */ true,
+                    /* "requis" => */ true,
+                    /* "modifiable" => */ false,
+                    /* "unique" => */ false,
+                    /* "erreur" => */ "",
+                    /* placeholder => */ "Nombre Achat ...",
+                ),
+            );
+        }
+    }
+?>

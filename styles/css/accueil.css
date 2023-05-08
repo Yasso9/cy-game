@@ -1,0 +1,66 @@
+.carousel
+{
+    width: 55%;
+}
+
+.element
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.element > article
+{
+    width: 30%;
+}
+
+@media screen and (max-width: 1500px) 
+{
+
+    .element > article
+    {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 1200px) 
+{
+    .carousel
+    {
+        width: 70%;
+    }
+    .element > article
+    {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 1000px) 
+{
+    .carousel
+    {
+        width: 85%;
+    }
+    .element > article
+    {
+        width: 48%;
+    }
+}
+@media screen and (max-width: 700px) 
+{
+    .carousel
+    {
+        width: 100%;
+        min-width: 100px;
+    }
+    .element
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .element > article
+    {
+        width: 100%;
+    }
+}

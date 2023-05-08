@@ -1,0 +1,79 @@
+.card-header img
+{
+    height: 50px;
+}
+
+.card-header
+{
+    cursor: pointer;
+    font-size: 30px;
+
+    transition: background-color 0.5s linear;
+}
+
+.card-header:hover
+{
+    background-color: rgb(80, 80, 80);
+}
+.card-header:active
+{
+    background-color: rgb(54, 54, 54);
+}
+
+.streamer img
+{
+    max-width: 200px;
+    min-width: 100px;
+}
+
+article
+{
+    max-height: 400px;
+}
+
+.streamer
+{
+    width: 25%;
+}
+
+.presentation
+{
+    width: 75%;
+}
+
+.nom-streamer
+{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.jeux-streamer
+{
+    font-style: italic;
+}
+
+.btn
+{
+    color: rgb(61, 29, 77);
+    font-weight: bold;
+    background-color: darkorchid;
+}
+.btn:hover
+{
+    background-color: rgb(174, 53, 235);
+}
+
+@media screen and (max-width: 768px) 
+{
+    .streamer, .presentation
+    {
+        width: 100%
+    }
+    article
+    {
+        max-height: none;
+    }
+    .display-4
+    {
+        font-size: 40px;
+    }
+}

@@ -1,0 +1,37 @@
+.card
+{
+    width: 20%;
+}
+
+
+@media screen and (max-width: 1300px) 
+{
+    .card
+    {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1000px) 
+{
+    .card
+    {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 800px) 
+{
+    .card
+    {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 580px) 
+{
+    .card
+    {
+        width: 100%;
+    }
+}

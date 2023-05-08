@@ -1,0 +1,58 @@
+.pied-de-page
+{
+    font-size: 0.8em;
+}
+
+.pied-de-page ul
+{
+    list-style-type: none
+}
+
+.pied-de-page img
+{
+    object-fit: cover;
+    /* min-width: 30px;
+    max-width: 50px; */
+    width: 80px;
+
+    height: auto;
+}
+
+
+@media screen and (max-width: 1200px) 
+{
+    .pied-de-page
+    {
+        font-size: 0.6em;
+    }
+    .pied-de-page img
+    {
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 900px) 
+{
+    .pied-de-page
+    {
+        font-size: 0.5em;
+    }
+    .pied-de-page img
+    {
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) 
+{
+    .pied-de-page
+    {
+        font-size: 0.4em;
+    }
+    .pied-de-page img
+    {
+        width: 30px;
+    }
+}
+
+

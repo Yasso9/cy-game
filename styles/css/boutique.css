@@ -1,0 +1,115 @@
+.produit
+{
+    width: 19%;
+}
+
+.produit-panier
+{
+    width: 9.5%;
+}
+
+.formulaire-panier
+{
+    background-image: linear-gradient(100deg, rgb(10, 82, 150) 20%, rgb(78, 132, 194) 80%);
+    max-height: 300px;
+    overflow: auto;
+}
+
+.bg-warning
+{
+    filter: brightness(Z0.9);
+}
+
+@media screen and (max-width: 1400px) 
+{
+    .produit
+    {
+        width: 24%;
+    }
+    .produit-panier
+    {
+        width: 12%;
+    }
+}
+@media screen and (max-width: 1100px) 
+{
+    .produit
+    {
+        width: 32%;
+    }
+    .produit-panier
+    {
+        width: 16%;
+    }
+}
+@media screen and (max-width: 850px) 
+{
+    .produit
+    {
+        width: 48%;
+    }
+    .produit-panier
+    {
+        width: 19%;
+    }
+}
+
+@media screen and (max-width: 580px) 
+{
+    .produit
+    {
+        width: 99%;
+    }
+    .produit-panier
+    {
+        width: 24%;
+    }
+    main > header
+    {
+        flex-direction: column;
+    }
+}
+
+
+.produit .image-produit
+{
+    width: 90%;
+    margin: 5%;
+
+    object-fit: cover;
+
+    transition: all 0.8s ease;
+}
+
+.produit .image-produit:hover
+{
+    width: 100%; 
+    margin: 0%;
+}
+
+.titre-panier
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+/* .bouton-creer-produit, .bouton-creer-produit:active
+{
+    all: unset;
+} */
+
+.ajouter-produit:hover, .ajouter-produit:active, 
+.bouton-enlever-article, .bouton-enlever-article:active
+{
+    cursor: pointer;
+}
+
+.produit-panier .img-thumbnail
+{
+    border: none;
+    padding: 0px;
+}
+
+.alerte-non-autorise
+{
+    top: 77px;
+}

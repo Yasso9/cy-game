@@ -1,0 +1,156 @@
+.jours > li
+{
+    width: 14.2857%;
+    height: 10vh;
+    line-height: 10vh;
+
+    font-style: italic;
+    text-align: center;
+    font-size: 23px;
+
+    font-family: "Alef";
+}
+
+.bouton-modifier-evenement, .jours > li form
+{
+    all: unset;
+}
+
+.jours > .evenement
+{
+    line-height: 15px;
+}
+
+.jours > li button
+{   
+    width: 100%;
+    height: 10vh;
+    font-size: 15px;
+    /* line-height: 15px; */
+}
+
+.nom-evenement
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.semaine > li
+{
+    width: 14.2857%;
+}
+
+.changer-annee, .changer-mois, .jour-mois[data-toggle="modal"]
+{
+    cursor: pointer;
+}
+
+.nom-annee, .nom-mois
+{
+    font-size: x-large;
+}
+
+
+.transition:hover 
+{
+    filter: saturate(1.75);
+    filter: brightness(1.25);
+}
+
+
+/* .jour-hors-mois
+{
+    background-color: gre;
+} */
+
+.mois > .changer-mois, .annee > .changer-annee
+{
+    filter: brightness(0.8);
+}
+
+.mois > .changer-mois:hover, .annee > .changer-annee:hover
+{
+    filter: brightness(1.1);
+}
+
+.jour-actuel
+{
+    border-width: 4px;
+    border-color: rgb(255, 255, 255);
+    border-style: dotted;
+}
+.jour-hors-mois
+{
+    background-image: linear-gradient(260deg, rgb(124, 124, 124) 20%, rgb(146, 146, 146) 80%);
+
+    transition: filter 0.7s linear;
+}
+.jour-hors-mois:hover
+{
+    filter: brightness(0.8);
+}
+
+.semaine
+{
+    background-image: linear-gradient(130deg, rgb(60, 82, 143) 20%, rgb(87, 118, 165) 80%);
+}
+
+.navigation-calendrier
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.navigation-calendrier > ul
+{
+    width: 25%;
+}
+
+@media screen and (max-width: 1100px) 
+{
+    .navigation-calendrier > ul
+    {
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 800px) 
+{
+    .navigation-calendrier
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-calendrier > ul
+    {
+        align-self: center;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) 
+{
+    .semaine
+    {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .navigation-calendrier > ul
+    {
+        width: 90%;
+    }
+
+    .jours > li
+    {
+        width: 100%;
+        height: 16vh;
+    }
+}

@@ -1,0 +1,36 @@
+.liste-donnees input
+{
+    all: unset;
+}
+
+.liste-donnees .list-group-item
+{
+    height: 100px;
+    font-size: 20px;
+    background-color: #3282b8;
+    color: #deedf0;
+    transition: font-size 1.5s;
+}
+
+.liste-donnees .list-group-item:hover
+{
+    font-size: 40px;  
+    background-color: #3d84b8; 
+}
+
+
+@media screen and (max-width: 800px) 
+{
+    .liste-donnees .list-group-item
+    {
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 540px) 
+{
+    .liste-donnees .list-group-item
+    {
+        height: 60px;
+    }
+}

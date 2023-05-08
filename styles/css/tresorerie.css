@@ -1,0 +1,24 @@
+ul
+{
+    list-style-type: none;
+}
+
+.bouton-tresorerie
+{
+    cursor: pointer;
+}
+.display-4
+{
+    font-size: 40px;
+    font-style: italic;
+}
+
+.table-success
+{
+    background-color: rgb(89, 196, 67);
+}
+
+.table-danger
+{
+    background-color: rgb(202, 67, 67);
+}

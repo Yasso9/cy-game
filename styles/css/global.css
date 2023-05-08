@@ -1,0 +1,150 @@
+/* Ce fichier CSS est présent dans toutes les pages du site */
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+222831
+30475e
+f2a365
+ececec
+343f56
+*/
+
+body
+{
+    background-color: #30475e;
+    color: #c2c2c2;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.lien-animer:link, .lien-animer:visited 
+{
+    color: rgb(184, 184, 184);
+    text-decoration: underline;
+}
+.lien-animer:hover 
+{
+    color: rgb(226, 225, 225);
+}
+.lien-animer:active 
+{
+    color: rgb(255, 255, 255);
+}
+
+@keyframes lien 
+{
+    0% {font-size: 1em;}
+    100% {font-size: 1.2em;}
+}
+
+
+section, article, aside, footer, header, nav 
+{
+    display: block;
+}
+
+/* Lorsqu'on utilise l'attribut hidden, à cause de flexbox il ne marche pas sinon */
+[hidden] {
+    /* !important sert à ne pas se faire surchergé par le reste du code CSS */
+    display: none !important;
+}
+
+.non-selection
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type="file"]
+{
+    cursor: pointer;
+}
+
+.bouton-noirci, .bouton-noirci:focus, .bouton-noirci[readonly]
+{
+    background-color: rgb(29, 29, 29);
+    color: rgb(199, 199, 199);
+    border-color: rgb(10, 10, 10);
+}
+
+.bouton-noirci[readonly]
+{
+    background-color: rgb(0, 0, 0);
+    color: rgb(107, 107, 107);
+}
+
+.bouton-noirci:focus
+{
+    box-shadow: 0px 0px 3px 3px rgb(135, 167, 167);
+}
+
+.bouton-noirci::placeholder 
+{
+    color: rgb(117, 117, 117);
+    opacity: 1; /* Firefox */
+}
+.bouton-noirci:-ms-input-placeholder 
+{
+    color: rgb(117, 117, 117);
+}
+.bouton-noirci::-ms-input-placeholder 
+{
+    color: rgb(117, 117, 117);
+}
+
+
+
+
+.fermeture-modal:focus, .fermeture-modal:active
+{
+    all: unset;
+
+    color: rgb(216, 27, 27);
+    font-size: 1.5em;
+
+    cursor: pointer;
+}
+.fermeture-modal
+{
+    all: unset;
+
+    color: rgb(216, 27, 27);
+    font-size: 1.5em;
+}
+
+.fermeture-modal:hover
+{
+    color: rgb(219, 89, 89);
+}
+
+
+
+@font-face 
+{
+    font-family: "Arch Rival";
+    src: url('/styles/polices/SF-Arch-Rival/SF_Arch_Rival.ttf');
+}
+
+@font-face 
+{
+    font-family: "Action-Man";
+    src: url('/styles/polices/Action-Man/Action_Man.ttf');
+}
+
+@font-face 
+{
+    font-family: "Alef";
+    src: url('/styles/polices/alef/Alef-Regular.ttf');
+}
+
